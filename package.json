@@ -10,7 +10,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "chromatic": "npx chromatic --project-token=chpt_7186294523d698d"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
@@ -55,6 +56,7 @@
     "@vitejs/plugin-react": "^6.0.2",
     "@vitest/browser-playwright": "^4.1.6",
     "@vitest/coverage-v8": "^4.1.6",
+    "chromatic": "^16.10.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "eslint-plugin-storybook": "^10.3.6",

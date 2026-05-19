@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Accessible Design System
 
-## Getting Started
+A production-quality React component library built with accessibility at its core.
+Every component is WCAG 2.1 AA compliant, tested with jest-axe, and documented in Storybook.
 
-First, run the development server:
+## Live Storybook
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**[View live component library →] https://6a0bcd62592cc4baef327e96-vlxiuytwwg.chromatic.com **
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js 14** (App Router) + **TypeScript**
+- **Radix UI** primitives (accessible, unstyled)
+- **Tailwind CSS v4** for styling
+- **class-variance-authority** for component variants
+- **Storybook 8** with accessibility addon
+- **Vitest** + **React Testing Library** + **jest-axe**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Components
 
-## Learn More
+| Component | Variants | Tests | WCAG 2.1 AA |
+|-----------|----------|-------|-------------|
+| Button    | 5 variants, 3 sizes, loading/disabled/icons | 11 | ✅ |
+| Badge     | 7 variants, dot indicator | 11 | ✅ |
+| Input     | Error state, helper text, required, disabled | 15 | ✅ |
 
-To learn more about Next.js, take a look at the following resources:
+## Accessibility Approach
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Every component is built with:
+- **Semantic HTML** — correct elements for correct purposes
+- **ARIA attributes** — aria-invalid, aria-describedby, aria-busy, aria-hidden
+- **Keyboard navigation** — fully operable without a mouse
+- **Screen reader support** — tested with VoiceOver and NVDA
+- **Automated WCAG testing** — jest-axe runs on every component in CI
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Run Locally
 
-## Deploy on Vercel
+\`\`\`bash
+npm install
+npm run storybook     # component documentation at localhost:6006
+npm run test          # run all tests
+\`\`\`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Test Results
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+\`\`\`
+Test Files  3 passed
+Tests       37 passed
+\`\`\`
